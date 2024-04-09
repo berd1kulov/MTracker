@@ -5,4 +5,32 @@
 //  Created by Bakdaulet on 09.04.2024.
 //
 
-import Foundation
+import SwiftUI
+
+public struct NavigatorCustomActionSheet: ViewModifier {
+    private let actionSheetContent: () -> ActionSheet
+    @State private var showActionSheet = true
+    
+    public init(
+        actionSheetContent: @escaping () -> ActionSheet) {
+            self.actionSheetContent = actionSheetContent
+        }
+    
+    public func body(content: Content) -> some View {
+        ZStack {
+            content
+            Rectangle().foregroundColor(Color.black.opacity(0.6))
+        }.actionSheet(isPresented: $showActionSheet) {
+            actionSheetContent()
+        }
+    }
+}
+
+internal extension View {
+    func presentAsNavigatorActionSheet(
+        @ViewBuilder actionSheetContent: @escaping () -> ActionSheet
+    ) -> some View {
+        modifier(NavigatorCustomActionSheet(actionSheetContent: actionSheetContent))
+    }
+}
+

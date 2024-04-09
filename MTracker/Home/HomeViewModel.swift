@@ -5,14 +5,10 @@
 //  Created by Bakdaulet on 09.04.2024.
 //
 
-import SwiftUI
+import UIKit
+import BottomSheet
 
-struct HomeViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    HomeViewModel()
+class HomeViewModel: ObservableObject {
+    @Published var isPresented = true
+    @Published var selectedDetent: BottomSheet.PresentationDetent = .height(UIScreen.screenHeight - 384)
 }

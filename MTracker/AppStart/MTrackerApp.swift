@@ -11,7 +11,17 @@ import SwiftUI
 struct MTrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                RootApp(view: HomeView()) 
+                    .onAppear {
+                        configure()
+                    }
+            }
         }
+    }
+    
+    func configure() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = .darkGray
+        UIPageControl.appearance().pageIndicatorTintColor = .gray
     }
 }

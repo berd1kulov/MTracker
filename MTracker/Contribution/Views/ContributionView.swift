@@ -5,4 +5,16 @@
 //  Created by Bakdaulet on 09.04.2024.
 //
 
-import Foundation
+import SwiftUI
+
+struct ContributionView: View {
+    var body: some View {
+        HStack {
+            
+        }
+    }
+}
+
+#Preview {
+    ContributionView()
+}

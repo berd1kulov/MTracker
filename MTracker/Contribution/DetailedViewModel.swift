@@ -1,5 +1,5 @@
 //
-//  ContributionViewModel.swift
+//  DetailedViewModel.swift
 //  MTracker
 //
 //  Created by Bakdaulet on 09.04.2024.
